@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f8f7f4">
+    <meta name="description" content="Review the pieces in your ACTIVE shopping bag.">
+    <title>Your bag | ACTIVE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-[#f8f7f4] text-neutral-900 antialiased">
+    <header class="border-b border-stone-200 bg-[#f8f7f4]">
+      <nav class="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-5 sm:px-8" aria-label="Main navigation">
+        <a href="{{ url_for('home') }}" class="text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-600 transition hover:text-amber-900">← Back to shop</a>
+        <a href="{{ url_for('home') }}" class="text-center text-base font-semibold uppercase tracking-[0.22em] sm:text-lg">ACTIVE clothing brnd</a>
+        <a href="{{ url_for('dashboard') }}" class="text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-600 transition hover:text-amber-900">Your account</a>
+      </nav>
+    </header>
+
+    <main class="mx-auto max-w-[1200px] px-5 py-7 sm:px-8 sm:py-10">
+      <div class="mb-8 flex items-start gap-3 border border-amber-900/15 bg-amber-50/70 px-4 py-3" role="status">
+        <svg class="mt-0.5 h-4 w-4 shrink-0 text-amber-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/>
+        </svg>
+        <p class="text-xs leading-5 text-amber-950"><span class="font-semibold">Cart preview.</span> Items and totals are sample content. Your cart is not saved and checkout is not connected.</p>
+      </div>
+
+      <section class="border-b border-stone-200 pb-6" aria-labelledby="cart-title">
+        <p class="text-[10px] font-semibold uppercase tracking-[0.23em] text-amber-900">A few good things</p>
+        <div class="mt-2 flex flex-wrap items-baseline justify-between gap-3">
+          <h1 id="cart-title" class="text-3xl font-medium tracking-[-0.04em] sm:text-4xl">Your bag <span class="ml-1 text-base font-normal tracking-normal text-neutral-500" id="item-count" aria-live="polite">4 items</span></h1>
+          <a href="{{ url_for('home') }}#collection" class="text-[10px] font-semibold uppercase tracking-[0.16em] text-neutral-600 underline decoration-stone-300 underline-offset-4 transition hover:text-amber-900">Continue shopping</a>
+        </div>
+      </section>
+
+      <div id="cart-content" class="grid grid-cols-1 gap-10 pt-7 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-14">
+        <section id="cart-items" aria-label="Items in your shopping bag" class="divide-y divide-stone-200">
+          <article data-cart-item data-price-cents="32800" data-product-name="The Everyday Coat" class="grid grid-cols-[96px_minmax(0,1fr)] gap-4 py-5 first:pt-0 sm:grid-cols-[132px_minmax(0,1fr)] sm:gap-6">
+            <div class="aspect-[4/5] overflow-hidden bg-stone-200">
+              <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=500&q=80" alt="The Everyday Coat in oat" class="h-full w-full object-cover">
+            </div>
+            <div class="flex min-w-0 flex-col justify-between gap-4">
+              <div class="flex flex-wrap justify-between gap-x-4 gap-y-2">
+                <div>
+                  <h2 class="text-sm font-medium">The Everyday Coat</h2>
+                  <p class="mt-1 text-xs text-neutral-500">Oat · Size M · Recycled wool</p>
+                  <p class="mt-2 text-xs text-neutral-500">$328.00 each</p>
+                </div>
+                <p class="text-sm font-medium" data-line-total>$328.00</p>
+              </div>
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="inline-flex items-center border border-stone-300" role="group" aria-label="Quantity for The Everyday Coat">
+                  <button type="button" data-quantity-change="-1" aria-label="Decrease The Everyday Coat quantity" disabled class="px-3 py-2 text-sm text-neutral-500 transition hover:text-neutral-900 disabled:cursor-not-allowed disabled:opacity-40">−</button>
+                  <span data-quantity class="min-w-8 text-center text-xs" aria-live="polite">1</span>
+                  <button type="button" data-quantity-change="1" aria-label="Increase The Everyday Coat quantity" class="px-3 py-2 text-sm text-neutral-700 transition hover:text-neutral-900">+</button>
+                </div>
+                <button type="button" data-remove class="text-[9px] font-semibold uppercase tracking-[0.14em] text-neutral-500 underline decoration-stone-300 underline-offset-4 transition hover:text-amber-900">Remove</button>
+              </div>
+            </div>
+          </article>
+
+          <article data-cart-item data-price-cents="39500" data-product-name="The Studio Jacket" class="grid grid-cols-[96px_minmax(0,1fr)] gap-4 py-5 sm:grid-cols-[132px_minmax(0,1fr)] sm:gap-6">
+            <div class="aspect-[4/5] overflow-hidden bg-stone-200">
+              <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=500&q=80" alt="The Studio Jacket in umber" class="h-full w-full object-cover">
+            </div>
+            <div class="flex min-w-0 flex-col justify-between gap-4">
+              <div class="flex flex-wrap justify-between gap-x-4 gap-y-2">
+                <div>
+                  <h2 class="text-sm font-medium">The Studio Jacket</h2>
+                  <p class="mt-1 text-xs text-neutral-500">Umber · Size M · Responsibly sourced leather</p>
+                  <p class="mt-2 text-xs text-neutral-500">$395.00 each</p>
+                </div>
+                <p class="text-sm font-medium" data-line-total>$395.00</p>
+              </div>
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="inline-flex items-center border border-stone-300" role="group" aria-label="Quantity for The Studio Jacket">
+                  <button type="button" data-quantity-change="-1" aria-label="Decrease The Studio Jacket quantity" disabled class="px-3 py-2 text-sm text-neutral-500 transition hover:text-neutral-900 disabled:cursor-not-allowed disabled:opacity-40">−</button>
+                  <span data-quantity class="min-w-8 text-center text-xs" aria-live="polite">1</span>
+                  <button type="button" data-quantity-change="1" aria-label="Increase The Studio Jacket quantity" class="px-3 py-2 text-sm text-neutral-700 transition hover:text-neutral-900">+</button>
+                </div>
+                <button type="button" data-remove class="text-[9px] font-semibold uppercase tracking-[0.14em] text-neutral-500 underline decoration-stone-300 underline-offset-4 transition hover:text-amber-900">Remove</button>
+              </div>
+            </div>
+          </article>
+
+          <article data-cart-item data-price-cents="16800" data-product-name="The Soft Knit" class="grid grid-cols-[96px_minmax(0,1fr)] gap-4 py-5 sm:grid-cols-[132px_minmax(0,1fr)] sm:gap-6">
+            <div class="aspect-[4/5] overflow-hidden bg-stone-200">
+              <img src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&w=500&q=80" alt="The Soft Knit in charcoal" class="h-full w-full object-cover">
+            </div>
+            <div class="flex min-w-0 flex-col justify-between gap-4">
+              <div class="flex flex-wrap justify-between gap-x-4 gap-y-2">
+                <div>
+                  <h2 class="text-sm font-medium">The Soft Knit</h2>
+                  <p class="mt-1 text-xs text-neutral-500">Charcoal · Size M · Organic cotton</p>
+                  <p class="mt-2 text-xs text-neutral-500">$168.00 each</p>
+                </div>
+                <p class="text-sm font-medium" data-line-total>$336.00</p>
+              </div>
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="inline-flex items-center border border-stone-300" role="group" aria-label="Quantity for The Soft Knit">
+                  <button type="button" data-quantity-change="-1" aria-label="Decrease The Soft Knit quantity" class="px-3 py-2 text-sm text-neutral-700 transition hover:text-neutral-900">−</button>
+                  <span data-quantity class="min-w-8 text-center text-xs" aria-live="polite">2</span>
+                  <button type="button" data-quantity-change="1" aria-label="Increase The Soft Knit quantity" class="px-3 py-2 text-sm text-neutral-700 transition hover:text-neutral-900">+</button>
+                </div>
+                <button type="button" data-remove class="text-[9px] font-semibold uppercase tracking-[0.14em] text-neutral-500 underline decoration-stone-300 underline-offset-4 transition hover:text-amber-900">Remove</button>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <aside id="order-summary" class="h-fit border border-stone-200 bg-white/70 p-5 sm:p-6" aria-labelledby="summary-title">
+          <h2 id="summary-title" class="text-lg font-medium tracking-tight">Order summary</h2>
+          <div class="mt-6 space-y-4 border-b border-stone-200 pb-5 text-xs">
+            <div class="flex justify-between gap-4"><span class="text-neutral-600">Subtotal</span><span id="cart-subtotal">$1,059.00</span></div>
+            <div class="flex justify-between gap-4"><span class="text-neutral-600">Shipping</span><span id="cart-shipping" class="text-neutral-600">Complimentary</span></div>
+            <p class="text-[10px] leading-5 text-neutral-500" id="shipping-note">Complimentary shipping on orders over $250.</p>
+          </div>
+          <div class="flex justify-between gap-4 py-5 text-sm font-medium"><span>Total</span><span id="cart-total">$1,059.00</span></div>
+          <p class="text-[10px] leading-5 text-neutral-500">Taxes are calculated at checkout.</p>
+          <button type="button" disabled class="mt-5 flex w-full cursor-not-allowed items-center justify-center gap-3 bg-neutral-400 px-5 py-4 text-[10px] font-semibold uppercase tracking-[0.16em] text-white" aria-describedby="checkout-note">
+            Checkout unavailable
+          </button>
+          <p id="checkout-note" class="mt-3 text-center text-[10px] leading-5 text-neutral-500">Checkout is not connected in this preview.</p>
+          <div class="mt-5 border-t border-stone-200 pt-4">
+            <p class="text-[9px] font-semibold uppercase tracking-[0.14em] text-neutral-500">Thoughtful from start to finish</p>
+            <p class="mt-2 text-xs leading-5 text-neutral-500">Need a hand? Our team is happy to help with sizing or your order.</p>
+          </div>
+        </aside>
+      </div>
+
+      <section id="empty-cart" class="hidden py-20 text-center" aria-labelledby="empty-cart-title">
+        <p class="text-[10px] font-semibold uppercase tracking-[0.23em] text-amber-900">A fresh start</p>
+        <h2 id="empty-cart-title" class="mt-3 text-2xl font-medium tracking-tight">Your bag is waiting.</h2>
+        <p class="mt-2 text-sm text-neutral-500">Take a look around and find something you’ll love wearing.</p>
+        <a href="{{ url_for('home') }}#collection" class="mt-7 inline-flex items-center gap-3 bg-neutral-900 px-6 py-4 text-[10px] font-semibold uppercase tracking-[0.16em] text-white transition hover:bg-amber-900">Explore the collection <span aria-hidden="true">→</span></a>
+      </section>
+
+      <footer class="mt-10 border-t border-stone-200 pt-5">
+        <p class="text-[9px] uppercase tracking-[0.14em] text-neutral-400">Considered essentials, made to last.</p>
+      </footer>
+    </main>
+
+    <script>
+      const cartList = document.getElementById("cart-items");
+      const cartContent = document.getElementById("cart-content");
+      const emptyCart = document.getElementById("empty-cart");
+      const itemCount = document.getElementById("item-count");
+      const subtotalLabel = document.getElementById("cart-subtotal");
+      const shippingLabel = document.getElementById("cart-shipping");
+      const totalLabel = document.getElementById("cart-total");
+      const shippingNote = document.getElementById("shipping-note");
+      const currency = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" });
+      const freeShippingThreshold = 25000;
+      const standardShipping = 1200;
+
+      function updateCart() {
+        let subtotal = 0;
+        let quantityTotal = 0;
+        const activeItems = Array.from(document.querySelectorAll("[data-cart-item]"));
+
+        activeItems.forEach((item) => {
+          const quantity = Number(item.querySelector("[data-quantity]").textContent);
+          const lineTotal = Number(item.dataset.priceCents) * quantity;
+          subtotal += lineTotal;
+          quantityTotal += quantity;
+          item.querySelector("[data-line-total]").textContent = currency.format(lineTotal / 100);
+          item.querySelector('[data-quantity-change="-1"]').disabled = quantity <= 1;
+        });
+
+        const shipping = subtotal === 0 || subtotal >= freeShippingThreshold ? 0 : standardShipping;
+        const itemWord = quantityTotal === 1 ? "item" : "items";
+        itemCount.textContent = `${quantityTotal} ${itemWord}`;
+        subtotalLabel.textContent = currency.format(subtotal / 100);
+        shippingLabel.textContent = shipping === 0 && subtotal > 0 ? "Complimentary" : currency.format(shipping / 100);
+        totalLabel.textContent = currency.format((subtotal + shipping) / 100);
+        shippingNote.textContent = subtotal >= freeShippingThreshold
+          ? "Your order qualifies for complimentary shipping."
+          : `Add ${currency.format((freeShippingThreshold - subtotal) / 100)} for complimentary shipping.`;
+        cartContent.classList.toggle("hidden", quantityTotal === 0);
+        emptyCart.classList.toggle("hidden", quantityTotal !== 0);
+      }
+
+      cartList.addEventListener("click", (event) => {
+        const button = event.target.closest("button");
+        if (!button) return;
+
+        const item = button.closest("[data-cart-item]");
+        if (button.hasAttribute("data-remove")) {
+          item.remove();
+          updateCart();
+          return;
+        }
+
+        if (button.hasAttribute("data-quantity-change")) {
+          const quantityLabel = item.querySelector("[data-quantity]");
+          const currentQuantity = Number(quantityLabel.textContent);
+          const change = Number(button.dataset.quantityChange);
+          quantityLabel.textContent = String(Math.max(1, currentQuantity + change));
+          updateCart();
+        }
+      });
+
+      updateCart();
+    </script>
+  </body>
+</html>

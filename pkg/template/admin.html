@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f8f7f4">
+    <meta name="description" content="ACTIVE store administration preview.">
+    <title>Store overview | ACTIVE admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-[#f8f7f4] text-neutral-900 antialiased">
+    <header class="border-b border-stone-200 bg-white">
+      <div class="mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-5 py-4 sm:px-8">
+        <a href="{{ url_for('home') }}" class="text-sm font-semibold uppercase tracking-[0.22em]">ACTIVE <span class="font-normal text-neutral-500">/ Admin</span></a>
+        <div class="flex items-center gap-4">
+          <span class="hidden text-[10px] font-semibold uppercase tracking-[0.16em] text-amber-900 sm:inline">Preview mode</span>
+          <a href="{{ url_for('home') }}" class="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-600 transition hover:text-amber-900">View shop <span aria-hidden="true">↗</span></a>
+          <span class="flex h-9 w-9 items-center justify-center rounded-full bg-[#e7e1d7] text-xs font-medium" aria-label="Signed in as Jordan Davis">JD</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="mx-auto max-w-[1600px] px-5 py-5 sm:px-8 sm:py-7">
+      <div class="mb-6 flex items-start gap-3 border border-amber-900/15 bg-amber-50/70 px-4 py-3" role="status">
+        <svg class="mt-0.5 h-4 w-4 shrink-0 text-amber-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/>
+        </svg>
+        <p class="text-xs leading-5 text-amber-950"><span class="font-semibold">Sample data only.</span> Store analytics, customers, orders, and inventory are not connected to a database. Changes cannot be made from this preview.</p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-[220px_minmax(0,1fr)] xl:gap-12">
+        <aside>
+          <div class="border-b border-stone-200 pb-5">
+            <p class="text-[9px] font-semibold uppercase tracking-[0.2em] text-neutral-400">Workspace</p>
+            <p class="mt-2 text-sm font-medium">ACTIVE Store</p>
+            <p class="mt-1 text-xs text-neutral-500">Administrator preview</p>
+          </div>
+          <nav class="mt-4 flex gap-1 overflow-x-auto pb-2 lg:block lg:space-y-1 lg:overflow-visible lg:pb-0" aria-label="Admin navigation">
+            <a href="#overview" aria-current="page" class="inline-flex shrink-0 items-center gap-3 bg-neutral-900 px-3 py-2.5 text-xs font-medium text-white lg:w-full">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1"/><rect x="13.5" y="3.5" width="7" height="7" rx="1"/><rect x="3.5" y="13.5" width="7" height="7" rx="1"/><rect x="13.5" y="13.5" width="7" height="7" rx="1"/></svg>
+              Overview
+            </a>
+            <a href="#orders" class="inline-flex shrink-0 items-center gap-3 px-3 py-2.5 text-xs text-neutral-600 transition hover:bg-stone-200/70 hover:text-neutral-900 lg:w-full">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7.5h16l-1.5 13h-13L4 7.5Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+              Orders <span class="ml-auto hidden text-[10px] text-neutral-400 lg:inline">08</span>
+            </a>
+            <a href="#products" class="inline-flex shrink-0 items-center gap-3 px-3 py-2.5 text-xs text-neutral-600 transition hover:bg-stone-200/70 hover:text-neutral-900 lg:w-full">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m12 3 8.5 4.5v9L12 21l-8.5-4.5v-9L12 3Z"/><path d="m3.8 7.7 8.2 4.5 8.2-4.5M12 12.2V21"/></svg>
+              Products
+            </a>
+            <a href="#customers" class="inline-flex shrink-0 items-center gap-3 px-3 py-2.5 text-xs text-neutral-600 transition hover:bg-stone-200/70 hover:text-neutral-900 lg:w-full">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0m3-12a3 3 0 0 1 0 6m1 2a5 5 0 0 1 2 4"/></svg>
+              Customers
+            </a>
+          </nav>
+          <div class="mt-8 hidden border-t border-stone-200 pt-5 lg:block">
+            <p class="text-[9px] uppercase tracking-[0.15em] text-neutral-400">Store status</p>
+            <p class="mt-2 flex items-center gap-2 text-xs text-neutral-600"><span class="h-2 w-2 rounded-full bg-emerald-700"></span> Preview storefront</p>
+          </div>
+        </aside>
+
+        <main id="overview" class="min-w-0">
+          <section class="flex flex-col justify-between gap-5 border-b border-stone-200 pb-6 sm:flex-row sm:items-end">
+            <div>
+              <p class="text-[10px] font-semibold uppercase tracking-[0.23em] text-amber-900">Store overview</p>
+              <h1 class="mt-2 text-3xl font-medium tracking-[-0.04em] sm:text-4xl">Good morning, Jordan.</h1>
+              <p class="mt-2 text-sm text-neutral-500">Here’s a look at how your store is doing.</p>
+            </div>
+            <label class="relative block w-full sm:max-w-xs">
+              <span class="sr-only">Search orders, products, or customers</span>
+              <svg class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>
+              <input id="admin-search" type="search" autocomplete="off" placeholder="Search this page" class="w-full border border-stone-300 bg-white/70 py-2.5 pl-10 pr-3 text-xs outline-none transition placeholder:text-neutral-400 focus:border-amber-900 focus:ring-1 focus:ring-amber-900">
+            </label>
+          </section>
+
+          <section class="grid gap-3 py-6 sm:grid-cols-2 xl:grid-cols-4" aria-label="Store summary">
+            <article class="border border-stone-200 bg-white/70 p-5">
+              <div class="flex items-center justify-between">
+                <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-500">Total sales</p>
+                <span class="text-[9px] uppercase tracking-[0.12em] text-neutral-400">This month</span>
+              </div>
+              <p class="mt-3 text-3xl font-medium tracking-tight">$24,680</p>
+              <p class="mt-2 text-xs text-emerald-800">↑ 12.8% <span class="text-neutral-500">vs. last month</span></p>
+            </article>
+            <article class="border border-stone-200 bg-white/70 p-5">
+              <div class="flex items-center justify-between">
+                <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-500">Orders</p>
+                <svg class="h-4 w-4 text-amber-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7.5h16l-1.5 13h-13L4 7.5Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+              </div>
+              <p class="mt-3 text-3xl font-medium tracking-tight">186</p>
+              <p class="mt-2 text-xs text-emerald-800">↑ 8.2% <span class="text-neutral-500">vs. last month</span></p>
+            </article>
+            <article class="border border-stone-200 bg-white/70 p-5">
+              <div class="flex items-center justify-between">
+                <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-500">Customers</p>
+                <svg class="h-4 w-4 text-amber-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0m3-12a3 3 0 0 1 0 6m1 2a5 5 0 0 1 2 4"/></svg>
+              </div>
+              <p class="mt-3 text-3xl font-medium tracking-tight">1,284</p>
+              <p class="mt-2 text-xs text-emerald-800">↑ 4.6% <span class="text-neutral-500">vs. last month</span></p>
+            </article>
+            <article class="border border-amber-900/20 bg-amber-50/50 p-5">
+              <div class="flex items-center justify-between">
+                <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-500">Low stock</p>
+                <svg class="h-4 w-4 text-amber-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3 2.8 20h18.4L12 3Z"/><path d="M12 9v5m0 3h.01"/></svg>
+              </div>
+              <p class="mt-3 text-3xl font-medium tracking-tight">7</p>
+              <p class="mt-2 text-xs text-amber-900">Products need attention</p>
+            </article>
+          </section>
+
+          <section class="border border-stone-200 bg-white/70 p-5 sm:p-6" aria-labelledby="sales-title">
+            <div class="flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-900">Sales overview</p>
+                <h2 id="sales-title" class="mt-1 text-xl font-medium tracking-tight">Sales over the last 7 days</h2>
+              </div>
+              <p class="text-xs text-neutral-500">Sample data · USD</p>
+            </div>
+            <div class="mt-6 grid h-48 grid-cols-7 items-end gap-3 border-b border-l border-stone-200 px-3 sm:h-56 sm:gap-6" role="img" aria-label="Sample daily sales chart: Monday 2,100 dollars, Tuesday 3,200 dollars, Wednesday 2,700 dollars, Thursday 4,100 dollars, Friday 3,600 dollars, Saturday 5,200 dollars, Sunday 4,300 dollars.">
+              <div class="flex h-full flex-col items-center justify-end gap-2"><div class="w-full max-w-12 bg-[#d8cabc]" style="height:40%"></div><span class="pb-2 text-[9px] uppercase text-neutral-500">Mon</span></div>
+              <div class="flex h-full flex-col items-center justify-end gap-2"><div class="w-full max-w-12 bg-[#d8cabc]" style="height:61%"></div><span class="pb-2 text-[9px] uppercase text-neutral-500">Tue</span></div>
+              <div class="flex h-full flex-col items-center justify-end gap-2"><div class="w-full max-w-12 bg-[#d8cabc]" style="height:52%"></div><span class="pb-2 text-[9px] uppercase text-neutral-500">Wed</span></div>
+              <div class="flex h-full flex-col items-center justify-end gap-2"><div class="w-full max-w-12 bg-[#d8cabc]" style="height:78%"></div><span class="pb-2 text-[9px] uppercase text-neutral-500">Thu</span></div>
+              <div class="flex h-full flex-col items-center justify-end gap-2"><div class="w-full max-w-12 bg-[#d8cabc]" style="height:69%"></div><span class="pb-2 text-[9px] uppercase text-neutral-500">Fri</span></div>
+              <div class="flex h-full flex-col items-center justify-end gap-2"><div class="w-full max-w-12 bg-amber-900" style="height:100%"></div><span class="pb-2 text-[9px] uppercase text-neutral-500">Sat</span></div>
+              <div class="flex h-full flex-col items-center justify-end gap-2"><div class="w-full max-w-12 bg-[#d8cabc]" style="height:83%"></div><span class="pb-2 text-[9px] uppercase text-neutral-500">Sun</span></div>
+            </div>
+          </section>
+
+          <section id="orders" class="mt-8" aria-labelledby="orders-title">
+            <div class="mb-3 flex items-end justify-between gap-3">
+              <div>
+                <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-900">Latest activity</p>
+                <h2 id="orders-title" class="mt-1 text-xl font-medium tracking-tight">Recent orders</h2>
+              </div>
+              <span id="search-count" class="text-[10px] text-neutral-500" aria-live="polite">Showing all sample records</span>
+            </div>
+            <div class="overflow-x-auto border border-stone-200 bg-white/70">
+              <table class="w-full min-w-[650px] text-left">
+                <thead class="border-b border-stone-200 bg-stone-100/70">
+                  <tr class="text-[9px] font-semibold uppercase tracking-[0.14em] text-neutral-500">
+                    <th scope="col" class="px-4 py-3">Order</th><th scope="col" class="px-4 py-3">Customer</th><th scope="col" class="px-4 py-3">Date</th><th scope="col" class="px-4 py-3">Total</th><th scope="col" class="px-4 py-3">Status</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-stone-200 text-xs">
+                  <tr data-searchable><td class="whitespace-nowrap px-4 py-4 font-medium">#AC-10482</td><td class="whitespace-nowrap px-4 py-4">Maya Chen</td><td class="whitespace-nowrap px-4 py-4 text-neutral-500">Nov 23, 2026</td><td class="whitespace-nowrap px-4 py-4">$328.00</td><td class="whitespace-nowrap px-4 py-4"><span class="border border-sky-800/20 bg-sky-50 px-2.5 py-1 text-[9px] font-medium uppercase tracking-wide text-sky-900">In transit</span></td></tr>
+                  <tr data-searchable><td class="whitespace-nowrap px-4 py-4 font-medium">#AC-10481</td><td class="whitespace-nowrap px-4 py-4">Oliver James</td><td class="whitespace-nowrap px-4 py-4 text-neutral-500">Nov 22, 2026</td><td class="whitespace-nowrap px-4 py-4">$168.00</td><td class="whitespace-nowrap px-4 py-4"><span class="border border-amber-800/20 bg-amber-50 px-2.5 py-1 text-[9px] font-medium uppercase tracking-wide text-amber-900">Processing</span></td></tr>
+                  <tr data-searchable><td class="whitespace-nowrap px-4 py-4 font-medium">#AC-10480</td><td class="whitespace-nowrap px-4 py-4">Priya Patel</td><td class="whitespace-nowrap px-4 py-4 text-neutral-500">Nov 22, 2026</td><td class="whitespace-nowrap px-4 py-4">$395.00</td><td class="whitespace-nowrap px-4 py-4"><span class="border border-emerald-800/20 bg-emerald-50 px-2.5 py-1 text-[9px] font-medium uppercase tracking-wide text-emerald-900">Delivered</span></td></tr>
+                  <tr data-searchable><td class="whitespace-nowrap px-4 py-4 font-medium">#AC-10479</td><td class="whitespace-nowrap px-4 py-4">Noah Williams</td><td class="whitespace-nowrap px-4 py-4 text-neutral-500">Nov 21, 2026</td><td class="whitespace-nowrap px-4 py-4">$496.00</td><td class="whitespace-nowrap px-4 py-4"><span class="border border-emerald-800/20 bg-emerald-50 px-2.5 py-1 text-[9px] font-medium uppercase tracking-wide text-emerald-900">Delivered</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p id="no-results" class="hidden border border-t-0 border-stone-200 bg-white/70 px-4 py-5 text-center text-xs text-neutral-500">No matching sample records.</p>
+          </section>
+
+          <section id="products" class="mt-8" aria-labelledby="products-title">
+            <div class="mb-3 flex items-end justify-between">
+              <div>
+                <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-900">Catalog</p>
+                <h2 id="products-title" class="mt-1 text-xl font-medium tracking-tight">Inventory snapshot</h2>
+              </div>
+              <span class="text-[10px] uppercase tracking-[0.12em] text-neutral-400">4 sample products</span>
+            </div>
+            <div class="overflow-x-auto border border-stone-200 bg-white/70">
+              <table class="w-full min-w-[600px] text-left">
+                <thead class="border-b border-stone-200 bg-stone-100/70">
+                  <tr class="text-[9px] font-semibold uppercase tracking-[0.14em] text-neutral-500">
+                    <th scope="col" class="px-4 py-3">Product</th><th scope="col" class="px-4 py-3">SKU</th><th scope="col" class="px-4 py-3">Price</th><th scope="col" class="px-4 py-3">Stock</th><th scope="col" class="px-4 py-3">Status</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-stone-200 text-xs">
+                  <tr data-searchable><td class="whitespace-nowrap px-4 py-4 font-medium">The Everyday Coat <span class="ml-1 text-neutral-400">Oat</span></td><td class="px-4 py-4 text-neutral-500">CO-001-OAT</td><td class="px-4 py-4">$328</td><td class="px-4 py-4">24</td><td class="px-4 py-4 text-emerald-800">In stock</td></tr>
+                  <tr data-searchable><td class="whitespace-nowrap px-4 py-4 font-medium">The Studio Jacket <span class="ml-1 text-neutral-400">Umber</span></td><td class="px-4 py-4 text-neutral-500">JA-014-UMB</td><td class="px-4 py-4">$395</td><td class="px-4 py-4">3</td><td class="px-4 py-4 text-amber-900">Low stock</td></tr>
+                  <tr data-searchable><td class="whitespace-nowrap px-4 py-4 font-medium">The Soft Knit <span class="ml-1 text-neutral-400">Charcoal</span></td><td class="px-4 py-4 text-neutral-500">KN-008-CHR</td><td class="px-4 py-4">$168</td><td class="px-4 py-4">18</td><td class="px-4 py-4 text-emerald-800">In stock</td></tr>
+                  <tr data-searchable><td class="whitespace-nowrap px-4 py-4 font-medium">The Weekend Tote <span class="ml-1 text-neutral-400">Natural</span></td><td class="px-4 py-4 text-neutral-500">BG-021-NAT</td><td class="px-4 py-4">$96</td><td class="px-4 py-4">0</td><td class="px-4 py-4 text-rose-800">Out of stock</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="customers" class="mt-8 border border-stone-200 bg-white/70 p-5 sm:p-6" aria-labelledby="customers-title">
+            <div class="flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-900">Community</p>
+                <h2 id="customers-title" class="mt-1 text-xl font-medium tracking-tight">Recent customers</h2>
+              </div>
+              <span class="text-[10px] uppercase tracking-[0.12em] text-neutral-400">Sample profiles</span>
+            </div>
+            <div class="mt-4 grid gap-3 sm:grid-cols-3">
+              <article data-searchable class="border border-stone-200 p-4"><p class="text-sm font-medium">Maya Chen</p><p class="mt-1 text-xs text-neutral-500">maya.chen@example.com</p><p class="mt-3 text-[9px] uppercase tracking-[0.12em] text-neutral-400">Joined Nov 2026</p></article>
+              <article data-searchable class="border border-stone-200 p-4"><p class="text-sm font-medium">Oliver James</p><p class="mt-1 text-xs text-neutral-500">oliver.j@example.com</p><p class="mt-3 text-[9px] uppercase tracking-[0.12em] text-neutral-400">Joined Nov 2026</p></article>
+              <article data-searchable class="border border-stone-200 p-4"><p class="text-sm font-medium">Priya Patel</p><p class="mt-1 text-xs text-neutral-500">priya.p@example.com</p><p class="mt-3 text-[9px] uppercase tracking-[0.12em] text-neutral-400">Joined Oct 2026</p></article>
+            </div>
+          </section>
+
+          <footer class="mt-8 border-t border-stone-200 pt-5">
+            <p class="text-[9px] uppercase tracking-[0.14em] text-neutral-400">ACTIVE admin preview · Sample content only</p>
+          </footer>
+        </main>
+      </div>
+    </div>
+    <script>
+      const searchInput = document.getElementById("admin-search");
+      const searchableItems = Array.from(document.querySelectorAll("[data-searchable]"));
+      const searchCount = document.getElementById("search-count");
+      const noResults = document.getElementById("no-results");
+
+      searchInput.addEventListener("input", () => {
+        const query = searchInput.value.trim().toLocaleLowerCase();
+        let visibleCount = 0;
+
+        searchableItems.forEach((item) => {
+          const matches = item.textContent.toLocaleLowerCase().includes(query);
+          item.classList.toggle("hidden", !matches);
+          if (matches) visibleCount += 1;
+        });
+
+        searchCount.textContent = query
+          ? `Showing ${visibleCount} matching sample record${visibleCount === 1 ? "" : "s"}`
+          : "Showing all sample records";
+        noResults.classList.toggle("hidden", visibleCount > 0);
+      });
+    </script>
+  </body>
+</html>

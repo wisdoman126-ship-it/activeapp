@@ -20,12 +20,25 @@
           <a href="#story" class="hidden text-[11px] font-semibold uppercase tracking-[0.22em] text-neutral-700 hover:text-amber-900 sm:inline">Our story</a>
         </div>
         <a href="#" class="absolute left-1/2 -translate-x-1/2 text-center text-lg font-semibold uppercase tracking-[0.24em] sm:text-xl">ACTIVE clothing brnd</a>
-        <a href="#collection" class="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-700 hover:text-amber-900">
-          <span class="hidden sm:inline">Explore</span>
-          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <path d="M5 12h14M13 5l7 7-7 7"/>
-          </svg>
-        </a>
+        <div class="flex items-center gap-4">
+          <a href="{{ url_for('cart') }}" class="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-neutral-700 hover:text-amber-900" aria-label="Shopping bag">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M4 8h16l-1.5 12h-13L4 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>
+            </svg>
+            <span class="hidden sm:inline">Bag</span>
+          </a>
+          <a href="{{ url_for('dashboard') }}" class="text-[11px] font-semibold uppercase tracking-[0.16em] text-neutral-700 hover:text-amber-900" aria-label="Your account dashboard" title="Your account dashboard">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="12" cy="8" r="3.25"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/>
+            </svg>
+          </a>
+          <a href="{{ url_for('register') }}" class="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-700 hover:text-amber-900">
+            <span>Join us</span>
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
       </nav>
     </header>
 

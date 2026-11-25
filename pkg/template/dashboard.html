@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f8f7f4">
+    <meta name="description" content="Your ACTIVE account dashboard: orders, saved pieces, and account details.">
+    <title>Your account | ACTIVE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-[#f8f7f4] text-neutral-900 antialiased">
+    <header class="border-b border-stone-200 bg-[#f8f7f4]">
+      <nav class="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-5 sm:px-8" aria-label="Main navigation">
+        <a href="{{ url_for('home') }}" class="text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-600 transition hover:text-amber-900">← Back to shop</a>
+        <a href="{{ url_for('home') }}" class="text-base font-semibold uppercase tracking-[0.22em] sm:text-lg">ACTIVE clothing brnd</a>
+        <a href="{{ url_for('login') }}" class="text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-600 transition hover:text-amber-900">Sign in</a>
+      </nav>
+    </header>
+
+    <div class="mx-auto max-w-[1440px] px-5 py-6 sm:px-8 lg:py-10">
+      <div class="mb-6 flex items-start gap-3 border border-amber-900/15 bg-amber-50/70 px-4 py-3 sm:mb-8 sm:items-center">
+        <svg class="mt-0.5 h-4 w-4 shrink-0 text-amber-900 sm:mt-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/>
+        </svg>
+        <p class="text-xs leading-5 text-amber-950"><span class="font-semibold">Preview dashboard.</span> Orders and account details shown here are sample content; account services are not connected yet.</p>
+      </div>
+
+      <div class="grid gap-8 lg:grid-cols-[220px_minmax(0,1fr)] xl:gap-12">
+        <aside class="lg:pt-1">
+          <div class="flex items-center gap-3 border-b border-stone-200 pb-5 lg:block">
+            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#e7e1d7] text-sm font-medium text-neutral-700" aria-hidden="true">JD</div>
+            <div class="lg:mt-4">
+              <p class="text-sm font-medium">Jordan Davis</p>
+              <p class="mt-1 text-xs text-neutral-500">A considered wardrobe</p>
+            </div>
+          </div>
+          <nav class="mt-4 flex gap-1 overflow-x-auto pb-2 lg:block lg:space-y-1 lg:overflow-visible lg:pb-0" aria-label="Account navigation">
+            <a href="#overview" aria-current="page" class="inline-flex shrink-0 items-center gap-3 bg-neutral-900 px-3 py-2.5 text-xs font-medium text-white lg:w-full">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1"/><rect x="13.5" y="3.5" width="7" height="7" rx="1"/><rect x="3.5" y="13.5" width="7" height="7" rx="1"/><rect x="13.5" y="13.5" width="7" height="7" rx="1"/></svg>
+              Overview
+            </a>
+            <a href="#orders" class="inline-flex shrink-0 items-center gap-3 px-3 py-2.5 text-xs text-neutral-600 transition hover:bg-stone-200/70 hover:text-neutral-900 lg:w-full">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7.5h16l-1.5 13h-13L4 7.5Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+              Orders <span class="ml-auto hidden text-[10px] text-neutral-400 lg:inline">02</span>
+            </a>
+            <a href="#favorites" class="inline-flex shrink-0 items-center gap-3 px-3 py-2.5 text-xs text-neutral-600 transition hover:bg-stone-200/70 hover:text-neutral-900 lg:w-full">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.8 8.7c0 5.2-8.8 10-8.8 10s-8.8-4.8-8.8-10A4.7 4.7 0 0 1 12 6.1a4.7 4.7 0 0 1 8.8 2.6Z"/></svg>
+              Saved pieces
+            </a>
+            <a href="#details" class="inline-flex shrink-0 items-center gap-3 px-3 py-2.5 text-xs text-neutral-600 transition hover:bg-stone-200/70 hover:text-neutral-900 lg:w-full">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="3.25"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/></svg>
+              Account details
+            </a>
+          </nav>
+
+          <div class="mt-8 hidden border-t border-stone-200 pt-5 lg:block">
+            <a href="{{ url_for('home') }}" class="inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-neutral-500 transition hover:text-amber-900">
+              Continue shopping <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </aside>
+
+        <main id="overview" class="min-w-0">
+          <section class="flex flex-col justify-between gap-5 border-b border-stone-200 pb-6 sm:flex-row sm:items-end">
+            <div>
+              <p class="text-[10px] font-semibold uppercase tracking-[0.23em] text-amber-900">Your ACTIVE account</p>
+              <h1 class="mt-2 text-3xl font-medium tracking-[-0.04em] sm:text-4xl">Welcome back, Jordan.</h1>
+              <p class="mt-2 text-sm text-neutral-500">A little home for the pieces you love.</p>
+            </div>
+            <a href="{{ url_for('home') }}#collection" class="inline-flex w-fit items-center gap-3 bg-neutral-900 px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-white transition hover:bg-amber-900 focus:outline-none focus:ring-2 focus:ring-amber-900 focus:ring-offset-2">
+              Explore the collection <span aria-hidden="true">→</span>
+            </a>
+          </section>
+
+          <section class="grid gap-3 py-6 sm:grid-cols-3" aria-label="Account summary">
+            <article class="border border-stone-200 bg-white/70 p-5">
+              <div class="flex items-center justify-between">
+                <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-500">Orders placed</p>
+                <svg class="h-4 w-4 text-amber-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7.5h16l-1.5 13h-13L4 7.5Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+              </div>
+              <p class="mt-3 text-3xl font-medium tracking-tight">02</p>
+              <p class="mt-1 text-xs text-neutral-500">Since joining ACTIVE</p>
+            </article>
+            <article class="border border-stone-200 bg-white/70 p-5">
+              <div class="flex items-center justify-between">
+                <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-500">Saved pieces</p>
+                <svg class="h-4 w-4 text-amber-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.8 8.7c0 5.2-8.8 10-8.8 10s-8.8-4.8-8.8-10A4.7 4.7 0 0 1 12 6.1a4.7 4.7 0 0 1 8.8 2.6Z"/></svg>
+              </div>
+              <p class="mt-3 text-3xl font-medium tracking-tight">04</p>
+              <p class="mt-1 text-xs text-neutral-500">On your wish list</p>
+            </article>
+            <article class="border border-stone-200 bg-white/70 p-5">
+              <div class="flex items-center justify-between">
+                <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-500">Style notes</p>
+                <svg class="h-4 w-4 text-amber-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9L12 3Z"/></svg>
+              </div>
+              <p class="mt-3 text-3xl font-medium tracking-tight">320</p>
+              <p class="mt-1 text-xs text-neutral-500">Thoughtful choices, rewarded</p>
+            </article>
+          </section>
+
+          <section id="orders" aria-labelledby="order-title">
+            <div class="mb-3 flex items-center justify-between">
+              <div>
+                <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-900">On its way</p>
+                <h2 id="order-title" class="mt-1 text-xl font-medium tracking-tight">Your latest order</h2>
+              </div>
+              <span class="border border-emerald-800/20 bg-emerald-50 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.14em] text-emerald-900">In transit</span>
+            </div>
+            <div class="border border-stone-200 bg-white/70">
+              <div class="grid sm:grid-cols-[180px_minmax(0,1fr)]">
+                <div class="aspect-[4/3] overflow-hidden bg-stone-200 sm:aspect-auto">
+                  <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=700&q=80" alt="The Everyday Coat in oat" class="h-full w-full object-cover">
+                </div>
+                <div class="p-5 sm:p-6">
+                  <div class="flex flex-wrap items-start justify-between gap-4">
+                    <div>
+                      <p class="text-[9px] uppercase tracking-[0.18em] text-neutral-500">Order #AC-10482 · Recently placed</p>
+                      <h3 class="mt-2 text-lg font-medium">The Everyday Coat</h3>
+                      <p class="mt-1 text-xs text-neutral-500">Oat · Size M · Recycled wool</p>
+                    </div>
+                    <p class="text-sm font-medium">$328.00</p>
+                  </div>
+                  <div class="mt-6">
+                    <div class="flex items-center justify-between text-[9px] font-semibold uppercase tracking-[0.13em] text-neutral-500">
+                      <span class="text-amber-900">Confirmed</span><span class="text-amber-900">Packed</span><span class="text-neutral-400">Delivered</span>
+                    </div>
+                    <div class="relative mt-3 h-1 bg-stone-200" role="progressbar" aria-label="Order progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="66">
+                      <div class="h-full w-2/3 bg-amber-900"></div>
+                    </div>
+                    <p class="mt-3 text-xs text-neutral-500">Estimated delivery: <span class="font-medium text-neutral-800">3–5 business days</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="favorites" class="mt-9" aria-labelledby="saved-title">
+            <div class="mb-4 flex items-end justify-between">
+              <div>
+                <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-900">Kept close</p>
+                <h2 id="saved-title" class="mt-1 text-xl font-medium tracking-tight">Saved for later</h2>
+              </div>
+              <span class="text-[10px] uppercase tracking-[0.14em] text-neutral-400">A few favorites</span>
+            </div>
+            <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              <article class="group">
+                <a href="{{ url_for('home') }}#collection" class="block aspect-[4/5] overflow-hidden bg-stone-200">
+                  <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=700&q=80" alt="The Studio Jacket in umber" class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]">
+                </a>
+                <div class="flex justify-between gap-2 pt-3">
+                  <div><h3 class="text-xs font-medium">The Studio Jacket</h3><p class="mt-1 text-[10px] text-neutral-500">Umber</p></div>
+                  <span class="text-xs">$395</span>
+                </div>
+              </article>
+              <article class="group">
+                <a href="{{ url_for('home') }}#collection" class="block aspect-[4/5] overflow-hidden bg-stone-200">
+                  <img src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&w=700&q=80" alt="The Soft Knit in charcoal" class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]">
+                </a>
+                <div class="flex justify-between gap-2 pt-3">
+                  <div><h3 class="text-xs font-medium">The Soft Knit</h3><p class="mt-1 text-[10px] text-neutral-500">Charcoal</p></div>
+                  <span class="text-xs">$168</span>
+                </div>
+              </article>
+              <article class="group hidden sm:block">
+                <a href="{{ url_for('home') }}#collection" class="block aspect-[4/5] overflow-hidden bg-stone-200">
+                  <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=700&q=80" alt="The Everyday Coat in oat" class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]">
+                </a>
+                <div class="flex justify-between gap-2 pt-3">
+                  <div><h3 class="text-xs font-medium">The Everyday Coat</h3><p class="mt-1 text-[10px] text-neutral-500">Oat</p></div>
+                  <span class="text-xs">$328</span>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="details" class="mt-9 border-t border-stone-200 pt-6">
+            <div class="flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-900">Your details</p>
+                <h2 class="mt-1 text-xl font-medium tracking-tight">Account information</h2>
+              </div>
+              <p class="text-[10px] uppercase tracking-[0.12em] text-neutral-400">Sample account</p>
+            </div>
+            <div class="mt-4 grid gap-4 border border-stone-200 bg-white/70 p-5 sm:grid-cols-2">
+              <div><p class="text-[9px] font-semibold uppercase tracking-[0.15em] text-neutral-400">Name</p><p class="mt-1 text-sm">Jordan Davis</p></div>
+              <div><p class="text-[9px] font-semibold uppercase tracking-[0.15em] text-neutral-400">Email address</p><p class="mt-1 text-sm">jordan@example.com</p></div>
+              <div><p class="text-[9px] font-semibold uppercase tracking-[0.15em] text-neutral-400">Default delivery</p><p class="mt-1 text-sm">Add an address at checkout</p></div>
+              <div><p class="text-[9px] font-semibold uppercase tracking-[0.15em] text-neutral-400">Member since</p><p class="mt-1 text-sm">September 2025</p></div>
+            </div>
+          </section>
+
+          <footer class="mt-10 border-t border-stone-200 pt-5">
+            <p class="text-[9px] uppercase tracking-[0.14em] text-neutral-400">Considered essentials, made to last.</p>
+          </footer>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
