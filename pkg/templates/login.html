@@ -31,6 +31,7 @@
           {% endif %}
 
           <form class="mt-8 space-y-5" action="{{ url_for('login') }}" method="post">
+             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             <div>
               <label for="email" class="mb-2 block text-[10px] font-semibold uppercase tracking-[0.18em] text-neutral-700">Email address</label>
               <input id="email" name="email" type="email" autocomplete="email" required
